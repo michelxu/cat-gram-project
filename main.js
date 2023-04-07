@@ -342,8 +342,9 @@ window.onload = () => {
     verifyFormInputs(); //Form
 
     //from utils.js to fix the header padding at opening a modal
-    headerFixPadding('exampleModal', 'upload-ph');
-    headerFixPadding('infoModal', 'show-myinfo');
+    //removed because fix desktop but damage mobile -_-
+    //headerFixPadding('exampleModal', 'upload-ph');
+    //headerFixPadding('infoModal', 'show-myinfo');
 
     // Set flag to false on page load
     let scrolledManually = false;
