@@ -10,21 +10,21 @@
     rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <!-- Bootstrap CSS -->
     <!-- CSS -->
-    <link href="styles3.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 </head>
-<body class="bg-body-secondary">
+<body class="bg-body-secondary" style="padding-top: 66px;">
     <!-- Header section -->
-    <header class="bg-light py-2">
+    <header class="bg-light py-2 header" id="index-header">
         <div class="container-lg">
             <div class="row justify-content-center align-items-center">
                 <div class="d-flex flex-column align-items-center">
-                    <a href="index3.html"> <img src="/res/noun-cat.png" height="50px"></a>
+                    <a href="index.html"> <img src="/res/noun-cat.png" height="50px"></a>
                 </div>
             </div>
         </div>
     </header>
     <!-- End of Header section -->
-
+ 
     <!-- Error message -->
     <span class="container-lg d-flex flex-wrap justify-content-center text-black" id="error"></span>
 
@@ -42,7 +42,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Upload an image file</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-modal-upload"></button>
                 </div>
                 <div class="modal-body">
                     <!-- SECTION FORM UPLOAD A PHOTO -->
@@ -69,6 +69,28 @@
         </div>
     </div>
     <!-- Form Modal -->
+    <!-- MyInfoModal -->
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="infoModalLabel">About</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <i class="bi bi-laptop" style="font-size: 18px;"><small> thecatapi.com</small></i>
+                    <h6>Práctica de Consumo de Api</h6> 
+                    <br>
+                    <i class="bi bi-capsule" style="font-size: 18px;"><small> Realizado por Jean M</small></i>
+                    <h6><a><kbd>jeanmbcode@gmail.com</kbd></a></h6>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MyInfoModal-->      
     <!-- Main Buttons Menu -->
     <div class="container mb-4 mt-4">
         <div class="row justify-content-center">
@@ -80,12 +102,12 @@
                 </a>
             </div>
             <div class="col-auto">
-                <button type="button" class="btn btn-light btn-lg rounded-pill" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" class="btn btn-light btn-lg rounded-pill openmodalbtn" data-bs-toggle="modal" data-bs-target="#exampleModal" id="upload-ph">
                     <i class="bi bi-cloud-upload"></i>
                 </button>
             </div>
             <div class="col-auto">
-                <button type="button" class="btn btn-light btn-lg rounded-pill">
+                <button type="button" class="btn btn-light btn-lg rounded-pill" data-bs-toggle="modal" data-bs-target="#infoModal" id="show-myinfo">
                     <i class="bi bi-balloon-fill"></i>
                     <!-- capsule, balloon-fill, diagram-2-fill, infinity, joystick -->
                 </button>
@@ -176,6 +198,7 @@
         </div>
     </footer>
     <!-- End of Footer section -->
+    <!-- Save State Script-->
     <script>
         // Retrieve the stored state and restore it
         const pageState = window.localStorage.getItem('pageState');
@@ -188,7 +211,7 @@
     <script src="./constants.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> <!--Axios easy API-->
     <script src="./utils.js"></script>
-    <script src="./main3.js"></script>
+    <script src="./main.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"

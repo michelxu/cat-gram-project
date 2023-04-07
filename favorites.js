@@ -68,7 +68,7 @@ const deleteFavoriteCat = async (id) => {
             spanError.innerHTML = `Se ha producido un error: ${response.status} DATA MSG: ${data.message}`;
         }
         else{
-            showAlert(`Img: ${img_id} eliminada de favoritos`, "danger");
+            showAlert(`Imagen eliminada de favoritos 🐱`, "danger");
             //Eliminar elemento html
             document.getElementById(`post${img_id}`).remove();
     

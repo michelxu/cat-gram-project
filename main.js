@@ -204,7 +204,7 @@ const saveFavoriteCat = async (img_id) => {
             }
 
             lastImg = imgId;
-            showAlert(`Img: ${imgId} añadida a favoritos 😺`, "primary");        
+            showAlert(`Imagen añadida a favoritos 😺`, "primary");        
         }
     } catch (error) {
         console.log(error);
@@ -340,6 +340,10 @@ window.onload = () => {
     listenerModalButton();
     fetchRandomCats();
     verifyFormInputs(); //Form
+
+    //from utils.js to fix the header padding at opening a modal
+    headerFixPadding('exampleModal', 'upload-ph');
+    headerFixPadding('infoModal', 'show-myinfo');
 
     // Set flag to false on page load
     let scrolledManually = false;

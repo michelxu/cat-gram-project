@@ -145,3 +145,28 @@ function switchLoadingSpinner(switchTo){
     }
 }
 
+//arreglar header padding cuando se abre un modal... para todos los modals, cuando se cliquee cualquier botón
+function headerFixPadding(modalId, buttonId){
+    try {
+        const openModalButton = document.getElementById(buttonId);
+        const headerElement = document.getElementById('index-header');
+        
+
+        openModalButton.addEventListener('click', function() {
+        headerElement.classList.add('modal-open');
+        });
+
+        //Listener para cuando se hace click afuera del modal
+        const modalElement = document.getElementById(modalId);
+        modalElement.addEventListener('hidden.bs.modal', function () {
+            headerElement.classList.remove('modal-open');
+        });
+    } catch (error) {
+        console.log(error);
+    }
+    
+}
+
+
+
+
