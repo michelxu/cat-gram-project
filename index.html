@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat post</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+    rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <!-- CSS -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="bg-body-secondary" style="padding-top: 66px;">
+    <!-- Header section -->
+    <header class="bg-light py-2">
+        <div class="container-lg">
+            <div class="row justify-content-center align-items-center">
+                <div class="d-flex flex-column align-items-center">
+                    <a href="index.html"> <img src="/res/noun-cat.png" height="50px"></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End of Header section -->
+ 
+    <!-- Error message -->
+    <span class="container-lg d-flex flex-wrap justify-content-center text-black" id="error"></span>
+
+    <!-- Alert, Message Box -->
+    <div class="position-fixed bottom-0 start-50 translate-middle-x p-1" style="z-index: 11">
+        <div class="alert alert-success alert-dismissible fade hide" role="alert" id="alert_msg">
+            Your action was ...
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+    
+    <!-- Form Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Upload an image file</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- SECTION FORM UPLOAD A PHOTO -->
+                        <form id="uploadPhoto">
+                            <div class="form-group mb-3">
+                                <label for="namePhoto" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="namePhoto" placeholder="Enter the image name" value="">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="file" class="form-label">Upload file</label><br>
+                                <input type="file" class="form-control-file" id="file" name="file">
+                            </div>
+                            <div class="form-group mb-2">
+                                <img id="preview" src="https://gipromo.com.mx/backend//vistas/img/productos/default/default.jpg" alt="Image preview" style="max-height: 150px;">
+                            </div>
+                        </form>
+                        <!-- END FORM UPLOAD A PHOTO -->    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="uploadBtn" onclick="uploadPhoto()">Upload</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Form Modal -->
+    <!-- MyInfoModal -->
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="infoModalLabel">About</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <i class="bi bi-laptop" style="font-size: 18px;"><small> thecatapi.com</small></i>
+                    <h6>Práctica de Consumo de Api</h6> 
+                    <br>
+                    <i class="bi bi-capsule" style="font-size: 18px;"><small> Realizado por Jean M</small></i>
+                    <h5><a href="mailto:myemail@gmail.com"><kbd>myemail@gmail.com</kbd></a></h5>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MyInfoModal-->      
+    <!-- Main Buttons Menu -->
+    <div class="container mb-4 mt-4">
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <a href="/favorites.html">
+                    <button type="button" class="btn btn-light btn-lg rounded-pill">
+                        <i class="bi bi-bookmark-fill"></i>
+                    </button>
+                </a>
+            </div>
+            <div class="col-auto">
+                <button type="button" class="btn btn-light btn-lg rounded-pill" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <i class="bi bi-cloud-upload"></i>
+                </button>
+            </div>
+            <div class="col-auto">
+                <button type="button" class="btn btn-light btn-lg rounded-pill" data-bs-toggle="modal" data-bs-target="#infoModal">
+                    <i class="bi bi-balloon-fill"></i>
+                    <!-- capsule, balloon-fill, diagram-2-fill, infinity, joystick -->
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- End Main Buttons Menu -->
+    <!-- Main Section -->
+    <section id="posts">
+        <!-- Post -->
+        <div class="col-md-12 mb-4 mt-4" id="postcard-container">            
+            <div class="mx-auto narrow-section">
+                <h5><i class="bi bi-sticky" style="font-size: 18px;">
+                </i> Recent Posts
+            </h5>
+            </div>
+            <!-- Post 1 -->
+            <div class="post-card" id="post01">
+                <div class="card m-3 rounded-3">
+                    <div class="card-header">
+                        <div class="d-flex align-items-center">
+                            <img src="https://cdn2.thecatapi.com/images/b-hCwC0kn.jpg" alt="Profile picture" class="profile-pic me-3">
+                            <h6 class="card-title mb-0">@thecatpost</h6>
+                        </div>
+                    </div>
+                    <img src="https://uning.es/wp-content/uploads/2016/08/ef3-placeholder-image.jpg" alt="Post image" class="post-img">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <button type="button" class="btn btn-light me-2 rounded-circle"><i class="bi bi-heart"></i></button>
+                            <button type="button" class="btn btn-light me-2 rounded-circle"><i class="bi bi-chat"></i></button>
+                            <button type="button" class="btn btn-light me-2 rounded-circle"><i class="bi bi-plus-square"></i></button>
+                            <button type="button" class="btn btn-light ms-auto rounded-circle"><i class="bi bi-bookmark"></i></button>
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <h6 class="card-title mb-0 me-3">@thecatpost 🐱</h6>
+                            <p class="card-text"></p>
+                        </div>                 
+                    </div>
+                </div>
+            </div>
+            <!-- Post 1 -->
+            <!-- Post 2 -->
+            <div class="post-card" id="post02">
+                <div class="card m-3 rounded-3">
+                    <div class="card-header">
+                        <div class="d-flex align-items-center">
+                            <img src="https://cdn2.thecatapi.com/images/b-hCwC0kn.jpg" alt="Profile picture" class="profile-pic me-3">
+                            <h6 class="card-title mb-0">@thecatpost</h6>
+                        </div>
+                    </div>
+                    <img src="https://uning.es/wp-content/uploads/2016/08/ef3-placeholder-image.jpg" alt="Post image" class="post-img">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <button type="button" class="btn btn-light me-2 rounded-circle"><i class="bi bi-heart"></i></button>
+                            <button type="button" class="btn btn-light me-2 rounded-circle"><i class="bi bi-chat"></i></button>
+                            <button type="button" class="btn btn-light me-2 rounded-circle"><i class="bi bi-plus-square"></i></button>
+                            <button type="button" class="btn btn-light ms-auto rounded-circle"><i class="bi bi-bookmark"></i></button>
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <h6 class="card-title mb-0 me-3">@thecatpost 🐱</h6>
+                            <p class="card-text"></p>
+                        </div>                 
+                    </div>
+                </div>
+            </div>
+            <!-- Post 2 -->
+            <!-- here.. -->
+        </div>
+    </section>
+    <!-- End of Main Section-->
+
+    <!-- Loading Spinner -->
+    <div class="container-lg d-flex justify-content-center spinner-border mt-3 mb-3" role="status" id="loadingSpinner">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <!-- Load More Button, if scroll doesn't work -->
+    <div class="container-lg d-flex justify-content-center mb-5 flex-column align-items-center">
+        <h6 id="bottomMsgText" onclick="fetchRandomCats()">Click to load more cats</h6>
+        <i id="bottomMsgIcon" class="bi bi-arrows-expand d-none" onclick="scrollToTop()"></i>
+    </div>
+
+    <!-- Footer section -->
+    <footer class="bg-light py-3">
+        <div class="container">
+            <div class="d-flex justify-content-center align-items-center">
+                <kbd>© xmichxl 2023 😺 thecatapi.com</kbd>
+            </div>
+        </div>
+    </footer>
+    <!-- End of Footer section -->
+    <!-- Save State Script-->
+    <script>
+        // Retrieve the stored state and restore it
+        const pageState = window.localStorage.getItem('pageState');
+        if (pageState) {
+          const { scrollTop, scrollLeft } = JSON.parse(pageState);
+          document.body.scrollTop = scrollTop;
+          document.body.scrollLeft = scrollLeft;
+        }
+    </script>
+    <script src="./constants.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> <!--Axios easy API-->
+    <script src="./utils.js"></script>
+    <script src="./main.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+    crossorigin="anonymous">
+    </script>
+</body>
+</html>
