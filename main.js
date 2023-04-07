@@ -340,6 +340,13 @@ window.onload = () => {
     listenerModalButton();
     fetchRandomCats();
     verifyFormInputs(); //Form
+    
+    //from utils.js to fix the header padding at opening a modal
+    if(!isMobileDevice()){
+        console.log('fix modal padding ' + isMobileDevice());
+        headerFixPadding('exampleModal', 'upload-ph');
+        headerFixPadding('infoModal', 'show-myinfo');
+    }
 
     //from utils.js to fix the header padding at opening a modal
     //removed because fix desktop but damage mobile -_-
